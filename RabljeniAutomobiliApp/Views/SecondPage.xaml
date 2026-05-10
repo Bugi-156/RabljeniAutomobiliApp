@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="RabljeniAutomobiliApp.SecondPage"
+    BackgroundColor="#1E1E1E">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <Label
+                Text="Dodatni Automobili"
+                FontSize="32"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"/>
+
+            <!-- GOLF -->
+
+            <Frame
+                CornerRadius="20"
+                Padding="10"
+                BackgroundColor="#2C2C2C"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Image
+                        Source="golf.jpg"
+                        HeightRequest="220"
+                        Aspect="AspectFill">
+
+                        <Image.GestureRecognizers>
+
+                            <TapGestureRecognizer
+                                Tapped="OnImageTapped"/>
+
+                        </Image.GestureRecognizers>
+
+                    </Image>
+
+                    <Label
+                        Text="VW Golf 7"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+
+                    <Label
+                        Text="Pouzdan Golf 7 sa malom potrošnjom i odličnim stanjem."
+                        TextColor="LightGray"/>
+
+                    <Label
+                        Text="Cijena: 15.000 €"
+                        TextColor="Lime"
+                        FontAttributes="Bold"
+                        FontSize="20"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <!-- SKODA -->
+
+            <Frame
+                CornerRadius="20"
+                Padding="10"
+                BackgroundColor="#2C2C2C"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Image
+                        Source="skoda.jpg"
+                        HeightRequest="220"
+                        Aspect="AspectFill">
+
+                        <Image.GestureRecognizers>
+
+                            <TapGestureRecognizer
+                                Tapped="OnImageTapped"/>
+
+                        </Image.GestureRecognizers>
+
+                    </Image>
+
+                    <Label
+                        Text="Škoda Octavia"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="White"/>
+
+                    <Label
+                        Text="Veliki obiteljski auto sa ogromnim prtljažnikom."
+                        TextColor="LightGray"/>
+
+                    <Label
+                        Text="Cijena: 17.000 €"
+                        TextColor="Lime"
+                        FontAttributes="Bold"
+                        FontSize="20"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <!-- BUTTON -->
+
+            <Button
+                Text="Vrati se na početnu"
+                Clicked="BackClicked"
+                HeightRequest="60"
+                FontSize="20"
+                FontAttributes="Bold"
+                BackgroundColor="#8E44AD"
+                TextColor="White"
+                CornerRadius="20"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

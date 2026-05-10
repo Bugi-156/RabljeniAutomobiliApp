@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:RabljeniAutomobiliApp.ViewModels"
+    x:Class="RabljeniAutomobiliApp.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label
+                Text="Rabljeni Automobili"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"/>
+
+            <SearchBar
+                Placeholder="Pretraži auto..."
+                Text="{Binding SearchText}"/>
+
+            <HorizontalStackLayout Spacing="10">
+
+                <Button
+                    Text="Cijena ↑"
+                    Command="{Binding SortAscendingCommand}"/>
+
+                <Button
+                    Text="Cijena ↓"
+                    Command="{Binding SortDescendingCommand}"/>
+
+            </HorizontalStackLayout>
+
+            <Button
+                Text="Stranica broj 2"
+                Clicked="GoToSecondPage"/>
+
+            <CollectionView
+                ItemsSource="{Binding FilteredCars}"
+                SelectionMode="None">
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Frame
+                            Margin="0,10"
+                            Padding="10"
+                            CornerRadius="20">
+
+                            <VerticalStackLayout>
+
+                                <Image
+                                    Source="{Binding Image}"
+                                    HeightRequest="200"
+                                    Aspect="AspectFill">
+
+                                    <Image.GestureRecognizers>
+
+                                        <TapGestureRecognizer
+                                            Tapped="OnImageTapped"/>
+
+                                    </Image.GestureRecognizers>
+
+                                </Image>
+
+                                <Label
+                                    Text="{Binding Name}"
+                                    FontSize="22"
+                                    FontAttributes="Bold"/>
+
+                                <Label
+                                    Text="{Binding Description}"/>
+
+                                <Label
+                                    Text="{Binding Price, StringFormat='Cijena: {0} €'}"
+                                    FontAttributes="Bold"
+                                    TextColor="Lime"/>
+
+                            </VerticalStackLayout>
+
+                        </Frame>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
